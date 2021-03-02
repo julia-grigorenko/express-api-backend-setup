@@ -98,3 +98,7 @@ yarn-error.log
 .nyc_output
 coverage
 build/
+/man
+.DS_Store
+*/.DS_Store
+*/*/.DS_Store
