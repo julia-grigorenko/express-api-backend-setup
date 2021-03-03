@@ -10,13 +10,10 @@ install:
 after_success: yarn coverage
 before_script:
   - psql -c 'create database testdb;' -U postgres
-  - echo "this is log " > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter
 script:
   - yarn test
 after_script:
-  - ./cc-test-reporter --exit-code $TRAVIS_TEST_RESUL
+  - --exit-code $TRAVIS_TEST_RESUL
 services:
   - postgresql
 addons:
