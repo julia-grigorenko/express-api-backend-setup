@@ -8,8 +8,9 @@ cache:
 install:
   yarn
 before_script:
-  - bash -x psql -c 'create database testdb;' -U postgres
-  - echo $!
+  - which psql
+  - psql --version
+  - bash -x psql -c 'select version()' -U postgres
 script:
   - yarn runQuery
   - yarn test
