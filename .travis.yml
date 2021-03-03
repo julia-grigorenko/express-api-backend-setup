@@ -1,7 +1,5 @@
 language: node_js
-env:
-  global:
-    - CC_TEST_REPORTER_ID=get-this-from-code-climate-repo-page
+
 matrix:
   include:
   - node_js: '12'
@@ -12,7 +10,7 @@ install:
 after_success: yarn coverage
 before_script:
   - psql -c 'create database testdb;' -U postgres
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - curl -L echo "this is log " > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 script:
