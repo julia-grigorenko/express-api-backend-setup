@@ -12,11 +12,11 @@ before_script:
   - psql -c 'create database testdb;' -U postgres
   - echo "this is log " > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - ./cc-test-reporter
 script:
   - yarn test
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESUL
+  - ./cc-test-reporter --exit-code $TRAVIS_TEST_RESUL
 services:
   - postgresql
 addons:
