@@ -8,6 +8,7 @@ cache:
 install:
   yarn
 before_script:
+  - psql -c 'create database testdb;' -U postgres
   - which psql
   - psql --version
   - ls -la /etc/postgresql/
