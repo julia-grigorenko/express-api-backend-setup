@@ -10,7 +10,9 @@ install:
 before_script:
   - which psql
   - psql --version
-  - bash -x psql -c 'select version()' -U postgres
+  - ls -la /etc/postgresql/
+  - ls -la /etc/postgresql/10
+  - cat /etc/postgresql/10/main/pg_hba.conf
 script:
   - yarn runQuery
   - yarn test
